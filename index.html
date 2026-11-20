@@ -5,27 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Criarts Malharia | Uniformes personalizados em Jaru - RO</title>
   <meta name="description" content="Uniformes escolares e empresariais, sublimação, bordado, serigrafia e canecas personalizadas em Jaru - RO. Av. Dom Pedro I, 2924 - Setor 5. Peça seu orçamento pelo WhatsApp." />
-  <meta name="theme-color" content="#ffffff" />
-
-  <!-- Aplica o tema salvo ANTES de a página aparecer (evita piscar de branco no modo escuro) -->
-  <script>
-    try {
-      if (localStorage.getItem("criarts-theme") === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    } catch (e) {}
-  </script>
+  <meta name="theme-color" content="#101018" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- O "?v=3" força o navegador a baixar a versão nova. Ao editar o CSS/JS no futuro, troque o número (v=4, v=5...) -->
+  <link rel="stylesheet" href="style.css?v=3" />
 
   <!-- Ajustes de layout (5 cards de serviço, 6 itens na galeria, botões de orçamento) -->
   <style>
     /* ----- Botão verde de orçamento (WhatsApp) ----- */
-    .btn--wa { background: #25d366; color: var(--ink); border-color: var(--line); box-shadow: 3px 3px 0 var(--line); }
-    .btn--wa:hover { box-shadow: 6px 6px 0 var(--line); }
+    .btn--wa { background: #25d366; color: var(--ink); border-color: var(--line-color); box-shadow: 3px 3px 0 var(--line-color); }
+    .btn--wa:hover { box-shadow: 6px 6px 0 var(--line-color); }
 
     /* ----- Cards de serviço: 3 em cima + 2 embaixo ----- */
     .cards { grid-template-columns: repeat(6, 1fr); }
@@ -35,7 +28,7 @@
     .card__actions { margin-top: auto; padding-top: 20px; }
 
     /* Aviso de pedido mínimo bem visível */
-    .notice { font-size: 1rem; padding: 12px 16px; box-shadow: 4px 4px 0 var(--line); }
+    .notice { font-size: 1rem; padding: 12px 16px; box-shadow: 4px 4px 0 var(--line-color); }
 
     /* ----- Galeria: 6 itens (3 por linha) ----- */
     .gallery > .item:nth-child(n) { grid-column: span 2; display: flex; flex-direction: column; }
@@ -45,12 +38,12 @@
     .item__note {
       display: inline-block; margin-top: 8px;
       background: var(--yellow); color: var(--ink);
-      border: 2px solid var(--line); border-radius: 8px;
+      border: 2px solid var(--line-color); border-radius: 8px;
       padding: 2px 8px; font-size: .8rem;
     }
 
     /* ----- Endereço em destaque ----- */
-    .hero__addr { margin-top: 22px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+    .hero__addr { margin-top: 22px; font-size: .9rem; font-weight: 600; color: var(--muted-color); }
     .visit { background: var(--yellow); color: var(--ink); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 44px 0; }
     .visit__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
     .visit .tag { background: #fff; }
@@ -74,6 +67,15 @@
   </style>
 </head>
 <body>
+
+  <!-- Aplica o tema salvo ANTES de a página aparecer (evita piscar). Padrão = escuro; "light-theme" = claro -->
+  <script>
+    try {
+      if (localStorage.getItem("criarts-theme-v2") === "light") {
+        document.body.classList.add("light-theme");
+      }
+    } catch (e) {}
+  </script>
 
   <!-- Moldes de manchas de tinta (reutilizados pelas seções) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -104,8 +106,8 @@
 
         <!-- Botão de alternância de tema (texto e ícone são trocados pelo script.js) -->
         <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false">
-          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
-          <span class="theme-toggle__text">Modo Escuro</span>
+          <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
+          <span class="theme-toggle__text">Modo Claro</span>
         </button>
 
         <a href="#" class="btn btn--small js-whatsapp">Orçamento</a>
@@ -374,6 +376,6 @@
     </svg>
   </a>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
