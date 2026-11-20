@@ -1,5 +1,5 @@
 /* ===== CONFIGURAÇÃO DO WHATSAPP (altere só aqui, se precisar) ===== */
-const WHATSAPP_NUMBER = "5569992262400"; // 55 (Brasil) + 69 (DDD) + número
+const WHATSAPP_NUMBER = "5569999406437"; // 55 (Brasil) + 69 (DDD) + número
 const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
 
