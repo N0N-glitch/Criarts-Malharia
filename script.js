@@ -31,38 +31,43 @@ nav.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", () => toggleMenu(true))
 );
 
-/* ===== TEMA: MODO ESCURO / MODO CLARO ===== */
-const THEME_KEY = "criarts-theme";
+/* ===== TEMA: MODO ESCURO (padrão) / MODO CLARO (classe "light-theme" no body) ===== */
+const THEME_KEY = "criarts-theme-v2"; // guarda "light" ou "dark"
 const themeBtn = document.getElementById("themeToggle");
-const themeIcon = themeBtn.querySelector(".theme-toggle__icon");
-const themeText = themeBtn.querySelector(".theme-toggle__text");
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 
 function setTheme(theme, salvar = false) {
-  const escuro = theme === "dark";
+  const claro = theme === "light";
 
-  document.documentElement.setAttribute("data-theme", escuro ? "dark" : "light");
-
-  // O botão mostra a opção para a qual o site vai mudar ao clicar
-  themeIcon.textContent = escuro ? "☀️" : "🌙";
-  themeText.textContent = escuro ? "Modo Claro" : "Modo Escuro";
-  themeBtn.setAttribute("aria-pressed", String(escuro));
+  // Adiciona ou remove a classe no <body>: é isso que muda o site inteiro
+  document.body.classList.toggle("light-theme", claro);
 
   // Cor da barra do navegador no celular
-  if (themeMeta) themeMeta.setAttribute("content", escuro ? "#101018" : "#ffffff");
+  if (themeMeta) themeMeta.setAttribute("content", claro ? "#f8f9fa" : "#101018");
+
+  // O botão mostra a opção para a qual o site vai mudar ao clicar
+  if (themeBtn) {
+    const icone = themeBtn.querySelector(".theme-toggle__icon");
+    const texto = themeBtn.querySelector(".theme-toggle__text");
+    if (icone) icone.textContent = claro ? "🌙" : "☀️";
+    if (texto) texto.textContent = claro ? "Modo Escuro" : "Modo Claro";
+    themeBtn.setAttribute("aria-pressed", String(claro));
+  }
 
   if (salvar) {
     try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
   }
 }
 
-// Estado inicial: o mini script do <head> já aplicou o tema salvo; aqui só sincronizamos o botão
-setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light");
+// Estado inicial: o mini script do <body> já aplicou o tema salvo; aqui só sincronizamos o botão
+setTheme(document.body.classList.contains("light-theme") ? "light" : "dark");
 
-themeBtn.addEventListener("click", () => {
-  const atualEscuro = document.documentElement.getAttribute("data-theme") === "dark";
-  setTheme(atualEscuro ? "light" : "dark", true);
-});
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    const estaClaro = document.body.classList.contains("light-theme");
+    setTheme(estaClaro ? "dark" : "light", true);
+  });
+}
 
 /* ===== CABEÇALHO GANHA SOMBRA AO ROLAR ===== */
 const header = document.getElementById("header");
