@@ -4,13 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Criarts Malharia | Uniformes personalizados em Jaru - RO</title>
-  <meta name="description" content="Uniformes escolares e empresariais, sublimação total, bordado computadorizado, serigrafia e canecas personalizadas em Jaru - RO. Peça seu orçamento pelo WhatsApp." />
+  <meta name="description" content="Uniformes escolares e empresariais, sublimação, bordado, serigrafia e canecas personalizadas em Jaru - RO. Av. Dom Pedro I, 2924 - Setor 5. Peça seu orçamento pelo WhatsApp." />
   <meta name="theme-color" content="#ffffff" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Ajustes de layout desta versão (5 cards de serviço, 6 itens na galeria, botões de orçamento) -->
+  <style>
+    /* ----- Botão verde de orçamento (WhatsApp) ----- */
+    .btn--wa { background: #25d366; color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+    .btn--wa:hover { box-shadow: 6px 6px 0 var(--ink); }
+
+    /* ----- Cards de serviço: 3 em cima + 2 embaixo ----- */
+    .cards { grid-template-columns: repeat(6, 1fr); }
+    .cards > .card:nth-child(n) { grid-column: span 2; }
+    .cards > .card:nth-child(n+4) { grid-column: span 3; }
+    .card { display: flex; flex-direction: column; }
+    .card__actions { margin-top: auto; padding-top: 20px; }
+
+    /* Aviso de pedido mínimo bem visível */
+    .notice { font-size: 1rem; padding: 12px 16px; box-shadow: 4px 4px 0 var(--ink); }
+
+    /* ----- Galeria: 6 itens (3 por linha) ----- */
+    .gallery > .item:nth-child(n) { grid-column: span 2; display: flex; flex-direction: column; }
+    .gallery > .item:nth-child(n) .shot { aspect-ratio: 1 / 1; }
+    .item figcaption { flex: 1; }
+    .item .btn { margin: 0 18px 18px; text-align: center; }
+    .item__note {
+      display: inline-block; margin-top: 8px;
+      background: var(--yellow); border: 2px solid var(--ink); border-radius: 8px;
+      padding: 2px 8px; font-size: .8rem;
+    }
+
+    /* ----- Endereço em destaque ----- */
+    .hero__addr { margin-top: 22px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+    .visit { background: var(--yellow); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 44px 0; }
+    .visit__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+    .visit .tag { background: #fff; }
+    .visit h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 6px; }
+    .visit__inner p { font-weight: 600; }
+    .footer__addr strong { color: #fff; }
+
+    /* ----- Responsivo ----- */
+    @media (max-width: 860px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .cards > .card:nth-child(n) { grid-column: auto; }
+      .cards > .card:last-child { grid-column: 1 / -1; }
+      .gallery > .item:nth-child(n) { grid-column: span 3; }
+      .visit__inner { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 520px) {
+      .cards { grid-template-columns: 1fr; }
+      .cards > .card:nth-child(n), .cards > .card:last-child { grid-column: auto; }
+      .gallery > .item:nth-child(n) { grid-column: auto; }
+    }
+  </style>
 </head>
 <body>
 
@@ -62,26 +113,27 @@
         <div class="hero__text reveal">
           <span class="tag">Estúdio de criação · Jaru - RO</span>
           <h1>Criamos uma <mark>identidade</mark> para sua empresa e seus eventos com nossos uniformes.</h1>
-          <p>Da escola ao comércio, da pescaria ao grande evento: uniformes e personalizados com acabamento profissional, criados sob medida para a sua marca.</p>
+          <p>Da escola ao comércio, da pescaria ao grande evento: uniformes com acabamento profissional, criados sob medida para a sua marca.</p>
           <div class="hero__actions">
             <a href="#" class="btn btn--big js-whatsapp">Solicitar Orçamento via WhatsApp</a>
             <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
           </div>
           <ul class="hero__stats">
-            <li><strong>5</strong> técnicas de personalização</li>
+            <li><strong>5</strong> especialidades</li>
             <li><strong>100%</strong> sob medida</li>
             <li><strong>Jaru</strong> atendimento local</li>
           </ul>
+          <div class="hero__addr">📍 Av. Dom Pedro I, 2924 - Setor 5 · Jaru - RO</div>
         </div>
 
         <div class="hero__visual reveal">
           <figure class="polaroid p1">
-            <img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camiseta de pesca com peixe tropical" />
+            <img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camisa de pesca personalizada" />
           </figure>
           <figure class="polaroid p2">
-            <img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camiseta Jovens em Ação com arte graffiti" />
+            <img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camisetas personalizadas para eventos" />
           </figure>
-          <span class="sticker">Sublimação · Bordado · Serigrafia · Canecas</span>
+          <span class="sticker">Sublimação · Bordado · Serigrafia</span>
         </div>
       </div>
     </section>
@@ -98,39 +150,64 @@
         <div class="section__head reveal">
           <span class="tag tag--alt">O que fazemos</span>
           <h2>Nossos Serviços &amp; Especialidades</h2>
-          <p>Soluções completas para vestir a sua equipe, turma, evento ou presentear.</p>
+          <p>Soluções completas para vestir a sua equipe, turma ou evento.</p>
         </div>
 
         <div class="cards">
+          <!-- 1 -->
           <article class="card reveal" style="--c:#00b4ff">
             <div class="card__icon">🎓</div>
             <h3>Uniformes Escolares e Empresariais</h3>
             <p>Padronização que fortalece sua marca e dá identidade à sua equipe ou turma.</p>
+            <div class="card__actions">
+              <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Uniformes%20Escolares%20e%20Empresariais%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
+            </div>
           </article>
 
+          <!-- 2 -->
           <article class="card reveal" style="--c:#ff2d87">
             <div class="card__icon">🎣</div>
             <h3>Sublimação Total</h3>
             <p>Estampa em toda a peça, com cores vibrantes e duráveis. Ideal para camisas de pesca e esportivas personalizadas.</p>
+            <div class="card__actions">
+              <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Sublima%C3%A7%C3%A3o%20Total%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
+            </div>
           </article>
 
+          <!-- 3 -->
           <article class="card reveal" style="--c:#7c3aed">
             <div class="card__icon">🧵</div>
             <h3>Bordado Computadorizado</h3>
             <p>Logotipos e nomes bordados com precisão e acabamento premium em polos, jalecos, bonés e mais.</p>
+            <div class="card__actions">
+              <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Bordado%20Computadorizado%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
+            </div>
           </article>
 
+          <!-- 4 -->
           <article class="card reveal" style="--c:#ffd400">
             <div class="card__icon">🎉</div>
             <h3>Serigrafia e Camisetas para Eventos</h3>
             <p>Camisetas para formaturas, festas, campanhas e confraternizações.</p>
             <div class="notice">⚠️ Pedido mínimo: 8 unidades</div>
+            <div class="card__actions">
+              <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Serigrafia%20e%20Camisetas%20para%20Eventos%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
+            </div>
           </article>
 
+          <!-- 5 -->
           <article class="card reveal" style="--c:#22c55e">
             <div class="card__icon">☕</div>
             <h3>Canecas Personalizadas</h3>
-            <p>Canecas estampadas por sublimação com fotos, logos e mensagens especiais para presentes, brindes corporativos e datas comemorativas.</p>
+            <p>Presentes e lembranças com a sua arte, nome ou logomarca, para datas especiais e para a sua empresa.</p>
+            <div class="card__actions">
+              <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+                 href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Canecas%20Personalizadas%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
+            </div>
           </article>
         </div>
       </div>
@@ -145,15 +222,15 @@
         <div class="diff__text reveal">
           <span class="tag tag--alt">Por que a Criarts</span>
           <h2>Identidade visual que as pessoas reconhecem</h2>
-          <p>Nosso foco é criar identidade visual para empresas, comércios e eventos de Jaru e região. Cada peça é pensada para representar bem quem a usa.</p>
+          <p>Nosso foco é criar identidade visual para empresas, comércios e eventos de Jaru e região. Cada uniforme é pensado para representar bem quem o veste.</p>
           <a href="#" class="btn js-whatsapp">Falar com a Criarts</a>
         </div>
 
         <ul class="diff__list">
-          <li class="reveal" style="--c:#ff2d87"><span>✔</span><div><h3>Identidade para sua marca</h3><p>Uniformes e brindes que transmitem profissionalismo e fortalecem a imagem do seu negócio.</p></div></li>
+          <li class="reveal" style="--c:#ff2d87"><span>✔</span><div><h3>Identidade para sua marca</h3><p>Uniformes que transmitem profissionalismo e fortalecem a imagem do seu negócio.</p></div></li>
           <li class="reveal" style="--c:#00b4ff"><span>✔</span><div><h3>Acabamento de qualidade</h3><p>Costura, bordado, sublimação e serigrafia feitos com cuidado em cada detalhe.</p></div></li>
           <li class="reveal" style="--c:#ffd400"><span>✔</span><div><h3>Atendimento próximo</h3><p>Loja física em Jaru e atendimento direto pelo WhatsApp.</p></div></li>
-          <li class="reveal" style="--c:#22c55e"><span>✔</span><div><h3>Do pequeno ao grande pedido</h3><p>Escolas, empresas, times, pescarias, presentes e eventos de todos os tamanhos.</p></div></li>
+          <li class="reveal" style="--c:#22c55e"><span>✔</span><div><h3>Do pequeno ao grande pedido</h3><p>Escolas, empresas, times, pescarias e eventos de todos os tamanhos.</p></div></li>
         </ul>
       </div>
     </section>
@@ -167,44 +244,75 @@
         <div class="section__head reveal">
           <span class="tag tag--alt">Portfólio</span>
           <h2>Galeria de Produtos</h2>
-          <p>Alguns exemplos reais do que criamos para nossos clientes.</p>
+          <p>Alguns exemplos reais do que criamos para nossos clientes. Gostou de algum? É só pedir o orçamento.</p>
         </div>
 
         <div class="gallery">
+          <!-- 1 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Camiseta Branca com Listras Marinho.png" alt="Uniforme Escolar Personalizado" loading="lazy" /></div>
+            <div class="shot"><img src="imagens/Camiseta Branca com Listras Marinho.png" alt="Uniforme escolar personalizado" loading="lazy" /></div>
             <figcaption>Uniforme Escolar Personalizado</figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Uniforme%20Escolar%20Personalizado%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
 
+          <!-- 2 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Polo Azul-Marinho com Detalhes Cinza.png" alt="Uniforme Empresarial / Polo com Bordado" loading="lazy" /></div>
+            <div class="shot"><img src="imagens/Polo Azul-Marinho com Detalhes Cinza.png" alt="Uniforme empresarial, polo com bordado" loading="lazy" /></div>
             <figcaption>Uniforme Empresarial / Polo com Bordado</figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20o%20Uniforme%20Empresarial%20%2F%20Polo%20com%20Bordado%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
 
+          <!-- 3 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camisa de Pesca Personalizada" loading="lazy" /></div>
-            <figcaption>Camisa de Pesca Personalizada (Sublimação Total)</figcaption>
+            <div class="shot"><img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camisa de pesca personalizada" loading="lazy" /></div>
+            <figcaption>Camisa de Pesca Personalizada</figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20a%20Camisa%20de%20Pesca%20Personalizada%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
 
+          <!-- 4 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camisetas para Eventos e Igrejas" loading="lazy" /></div>
-            <figcaption>Camisetas para Eventos e Igrejas</figcaption>
+            <div class="shot"><img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camisetas personalizadas para eventos" loading="lazy" /></div>
+            <figcaption>Camisetas para Eventos<br /><small class="item__note">⚠️ Pedido mínimo: 8 unidades</small></figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20as%20Camisetas%20para%20Eventos%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
 
+          <!-- 5 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Camiseta Esportiva Preta e Roxa Strikers.png" alt="Camiseta Esportiva / Times e Torcidas" loading="lazy" /></div>
-            <figcaption>Camiseta Esportiva / Times e Torcidas</figcaption>
+            <div class="shot"><img src="imagens/Camiseta Esportiva Preta e Roxa Strikers.png" alt="Camiseta esportiva para times" loading="lazy" /></div>
+            <figcaption>Camiseta Esportiva / Times</figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20a%20Camiseta%20Esportiva%20%2F%20Times%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
 
+          <!-- 6 -->
           <figure class="item reveal">
-            <div class="shot"><img src="imagens/Caneca Rosa Feliz Aniversário.png" alt="Caneca Personalizada por Sublimação" loading="lazy" /></div>
-            <figcaption>Caneca Personalizada (Presentes &amp; Brindes)</figcaption>
+            <div class="shot"><img src="imagens/Caneca Rosa Feliz Aniversário.png" alt="Caneca personalizada" loading="lazy" /></div>
+            <figcaption>Caneca Personalizada</figcaption>
+            <a class="btn btn--small btn--wa" target="_blank" rel="noopener noreferrer"
+               href="https://wa.me/5569992262400?text=Ol%C3%A1!%20Vi%20no%20site%20a%20Caneca%20Personalizada%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento.">💬 Pedir orçamento</a>
           </figure>
         </div>
 
         <div class="center reveal">
           <a href="#" class="btn btn--big js-whatsapp">Quero um orçamento personalizado</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ FAIXA DO ENDEREÇO ============ -->
+    <section class="visit" id="visite">
+      <div class="container visit__inner reveal">
+        <div>
+          <span class="tag">Venha nos visitar</span>
+          <h2>Nossa loja em Jaru - RO</h2>
+          <p>📍 Av. Dom Pedro I, 2924 - Setor 5, Jaru - RO</p>
+        </div>
+        <a class="btn btn--big" target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Dom%20Pedro%20I%2C%202924%20-%20Setor%205%2C%20Jaru%20-%20RO">Ver no mapa</a>
       </div>
     </section>
   </main>
@@ -224,15 +332,14 @@
 
       <div>
         <h4>Contato</h4>
-        <p>📍 Av. Dom Pedro I, 2924 - Setor 5<br />Jaru - RO</p>
+        <p class="footer__addr">📍 <strong>Av. Dom Pedro I, 2924 - Setor 5</strong><br />Jaru - RO</p>
         <p>📞 <a href="tel:+5569992262400">(69) 99226-2400</a></p>
         <p>💬 <a href="#" class="js-whatsapp">Chamar no WhatsApp</a></p>
       </div>
 
       <div>
         <h4>Horário comercial</h4>
-        <!-- AJUSTE os horários para os reais da loja -->
-        <p>Segunda a Sexta: 08h às 18h<br />Sábado: 08h às 12h</p>
+        <p>Segunda a Sexta: 08h às 12h e das 13h30 às 18h<br />Sábados: 08h às 12h</p>
       </div>
     </div>
 
@@ -252,4 +359,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+                                                             </html>
