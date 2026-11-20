@@ -5,26 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Criarts Malharia | Uniformes personalizados em Jaru - RO</title>
   <meta name="description" content="Uniformes escolares e empresariais, sublimação total, bordado computadorizado e serigrafia em Jaru - RO. Peça seu orçamento pelo WhatsApp." />
-  <meta name="theme-color" content="#0a1f44" />
+  <meta name="theme-color" content="#ffffff" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Molde de camiseta reutilizável (SVG leve) -->
+  <!-- Moldes de manchas de tinta (reutilizados pelas seções) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="shirt" viewBox="0 0 100 100">
-      <path d="M30 10 L10 25 L20 40 L28 35 L28 90 L72 90 L72 35 L80 40 L90 25 L70 10 Q50 24 30 10 Z"/>
+    <symbol id="splat" viewBox="0 0 200 200">
+      <path d="M100 18C128 12 158 30 168 60C186 64 194 96 178 112C190 138 164 172 134 168C118 192 82 190 72 166C42 172 14 146 28 118C8 100 18 68 44 62C46 34 74 22 100 18Z"/>
+      <circle cx="188" cy="28" r="9"/><circle cx="14" cy="176" r="7"/>
+      <circle cx="196" cy="176" r="5"/><circle cx="10" cy="22" r="5"/><circle cx="150" cy="198" r="4"/>
+    </symbol>
+    <symbol id="splat2" viewBox="0 0 200 200">
+      <path d="M104 14C118 40 140 30 152 50C166 46 170 70 162 82C190 88 188 110 170 118C192 140 168 156 152 152C150 176 124 176 114 164C102 192 82 178 80 160C56 172 38 154 50 138C22 134 20 112 40 104C18 88 36 70 54 74C50 52 70 44 82 52C84 32 96 20 104 14Z"/>
+      <circle cx="176" cy="30" r="7"/><circle cx="22" cy="170" r="8"/><circle cx="190" cy="150" r="4"/>
     </symbol>
   </svg>
 
   <!-- ============ CABEÇALHO ============ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#inicio" class="logo">Criarts<span>Malharia</span></a>
+      <a href="#inicio" class="logo">
+        <span class="logo__dots"><i></i><i></i><i></i></span>
+        Criarts<b>Malharia</b>
+      </a>
 
       <nav class="nav" id="nav" aria-label="Menu principal">
         <a href="#servicos">Serviços</a>
@@ -43,13 +52,17 @@
   <main>
     <!-- ============ HERO ============ -->
     <section class="hero" id="inicio">
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
+      <!-- Manchas de tinta decorativas -->
+      <svg class="splat" style="--c:#ff2d87;--w:440px;--r:20deg;top:-90px;right:-110px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat"/></svg>
+      <svg class="splat" style="--c:#00b4ff;--w:360px;--r:-15deg;bottom:-150px;left:-170px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat2"/></svg>
+      <svg class="splat" style="--c:#ffd400;--w:170px;--r:40deg;top:120px;left:46%" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat"/></svg>
+      <svg class="splat" style="--c:#7c3aed;--w:110px;--r:10deg;bottom:70px;right:40%" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat2"/></svg>
+
       <div class="container hero__inner">
         <div class="hero__text reveal">
-          <span class="tag">Jaru - RO e região</span>
-          <h1>Criamos uma <em>identidade</em> para sua empresa e seus eventos com nossos uniformes.</h1>
-          <p>Da escola ao comércio, da pescaria ao grande evento: uniformes com acabamento profissional, feitos sob medida para a sua marca.</p>
+          <span class="tag">Estúdio de criação · Jaru - RO</span>
+          <h1>Criamos uma <mark>identidade</mark> para sua empresa e seus eventos com nossos uniformes.</h1>
+          <p>Da escola ao comércio, da pescaria ao grande evento: uniformes com acabamento profissional, criados sob medida para a sua marca.</p>
           <div class="hero__actions">
             <a href="#" class="btn btn--big js-whatsapp">Solicitar Orçamento via WhatsApp</a>
             <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
@@ -61,45 +74,53 @@
           </ul>
         </div>
 
-        <div class="hero__visual reveal" aria-hidden="true">
-          <div class="shirt-stack">
-            <svg class="shirt shirt--1"><use href="#shirt"/></svg>
-            <svg class="shirt shirt--2"><use href="#shirt"/></svg>
-            <svg class="shirt shirt--3"><use href="#shirt"/></svg>
-          </div>
+        <div class="hero__visual reveal">
+          <figure class="polaroid p1">
+            <img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camiseta de pesca com peixe tropical" />
+          </figure>
+          <figure class="polaroid p2">
+            <img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camiseta Jovens em Ação com arte graffiti" />
+          </figure>
+          <span class="sticker">Sublimação · Bordado · Serigrafia</span>
         </div>
       </div>
     </section>
 
+    <!-- Barra de cores (estilo gráfica) -->
+    <div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
     <!-- ============ SERVIÇOS ============ -->
     <section class="section" id="servicos">
+      <svg class="splat" style="--c:#ff7a1a;--w:260px;--r:-25deg;top:-60px;left:-90px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat2"/></svg>
+      <svg class="splat" style="--c:#22c55e;--w:200px;--r:30deg;bottom:-70px;right:-60px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat"/></svg>
+
       <div class="container">
         <div class="section__head reveal">
-          <span class="tag tag--dark">O que fazemos</span>
+          <span class="tag tag--alt">O que fazemos</span>
           <h2>Nossos Serviços &amp; Especialidades</h2>
           <p>Soluções completas para vestir a sua equipe, turma ou evento.</p>
         </div>
 
         <div class="cards">
-          <article class="card reveal">
+          <article class="card reveal" style="--c:#00b4ff">
             <div class="card__icon">🎓</div>
             <h3>Uniformes Escolares e Empresariais</h3>
             <p>Padronização que fortalece sua marca e dá identidade à sua equipe ou turma.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card reveal" style="--c:#ff2d87">
             <div class="card__icon">🎣</div>
             <h3>Sublimação Total</h3>
             <p>Estampa em toda a peça, com cores vibrantes e duráveis. Ideal para camisas de pesca e esportivas personalizadas.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card reveal" style="--c:#7c3aed">
             <div class="card__icon">🧵</div>
             <h3>Bordado Computadorizado</h3>
             <p>Logotipos e nomes bordados com precisão e acabamento premium em polos, jalecos, bonés e mais.</p>
           </article>
 
-          <article class="card card--highlight reveal">
+          <article class="card reveal" style="--c:#ffd400">
             <div class="card__icon">🎉</div>
             <h3>Serigrafia e Camisetas para Eventos</h3>
             <p>Camisetas para formaturas, festas, campanhas e confraternizações.</p>
@@ -110,61 +131,63 @@
     </section>
 
     <!-- ============ DIFERENCIAIS ============ -->
-    <section class="section section--dark" id="diferenciais">
+    <section class="section section--gray" id="diferenciais">
+      <svg class="splat" style="--c:#00b4ff;--w:320px;--r:15deg;top:-80px;right:-120px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat"/></svg>
+      <svg class="splat" style="--c:#ff2d87;--w:230px;--r:-30deg;bottom:-90px;left:-80px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat2"/></svg>
+
       <div class="container diff">
         <div class="diff__text reveal">
-          <span class="tag">Por que a Criarts</span>
+          <span class="tag tag--alt">Por que a Criarts</span>
           <h2>Identidade visual que as pessoas reconhecem</h2>
           <p>Nosso foco é criar identidade visual para empresas, comércios e eventos de Jaru e região. Cada uniforme é pensado para representar bem quem o veste.</p>
           <a href="#" class="btn js-whatsapp">Falar com a Criarts</a>
         </div>
 
         <ul class="diff__list">
-          <li class="reveal"><span>✔</span><div><h3>Identidade para sua marca</h3><p>Uniformes que transmitem profissionalismo e fortalecem a imagem do seu negócio.</p></div></li>
-          <li class="reveal"><span>✔</span><div><h3>Acabamento de qualidade</h3><p>Costura, bordado, sublimação e serigrafia feitos com cuidado em cada detalhe.</p></div></li>
-          <li class="reveal"><span>✔</span><div><h3>Atendimento próximo</h3><p>Loja física em Jaru e atendimento direto pelo WhatsApp.</p></div></li>
-          <li class="reveal"><span>✔</span><div><h3>Do pequeno ao grande pedido</h3><p>Escolas, empresas, times, pescarias e eventos de todos os tamanhos.</p></div></li>
+          <li class="reveal" style="--c:#ff2d87"><span>✔</span><div><h3>Identidade para sua marca</h3><p>Uniformes que transmitem profissionalismo e fortalecem a imagem do seu negócio.</p></div></li>
+          <li class="reveal" style="--c:#00b4ff"><span>✔</span><div><h3>Acabamento de qualidade</h3><p>Costura, bordado, sublimação e serigrafia feitos com cuidado em cada detalhe.</p></div></li>
+          <li class="reveal" style="--c:#ffd400"><span>✔</span><div><h3>Atendimento próximo</h3><p>Loja física em Jaru e atendimento direto pelo WhatsApp.</p></div></li>
+          <li class="reveal" style="--c:#22c55e"><span>✔</span><div><h3>Do pequeno ao grande pedido</h3><p>Escolas, empresas, times, pescarias e eventos de todos os tamanhos.</p></div></li>
         </ul>
       </div>
     </section>
 
     <!-- ============ GALERIA ============ -->
     <section class="section" id="galeria">
+      <svg class="splat" style="--c:#ffd400;--w:280px;--r:-10deg;top:-70px;right:-80px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat2"/></svg>
+      <svg class="splat" style="--c:#7c3aed;--w:240px;--r:25deg;bottom:-100px;left:-90px" viewBox="0 0 200 200" aria-hidden="true"><use href="#splat"/></svg>
+
       <div class="container">
         <div class="section__head reveal">
-          <span class="tag tag--dark">Portfólio</span>
+          <span class="tag tag--alt">Portfólio</span>
           <h2>Galeria de Produtos</h2>
-          <p>Alguns exemplos do que podemos criar para você.</p>
+          <p>Alguns exemplos reais do que criamos para nossos clientes.</p>
         </div>
 
-        <!--
-          PARA USAR FOTOS REAIS: troque o conteúdo de <div class="shot"> por
-          <img src="img/nome-da-foto.jpg" alt="Descrição" loading="lazy" />
-        -->
         <div class="gallery">
           <figure class="item reveal">
-            <div class="shot" style="--a:#0ea5e9;--b:#0a1f44"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Camisa de pesca sublimada</figcaption>
+            <div class="shot"><img src="imagens/Camiseta Branca com Listras Marinho.png" alt="Camiseta branca com listras marinho" loading="lazy" /></div>
+            <figcaption>Camiseta Branca com Listras Marinho</figcaption>
           </figure>
+
           <figure class="item reveal">
-            <div class="shot" style="--a:#1d4ed8;--b:#0a1f44"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Uniforme empresarial</figcaption>
+            <div class="shot"><img src="imagens/Polo Azul-Marinho com Detalhes Cinza.png" alt="Polo azul-marinho com detalhes cinza" loading="lazy" /></div>
+            <figcaption>Polo Azul-Marinho com Detalhes Cinza</figcaption>
           </figure>
+
           <figure class="item reveal">
-            <div class="shot" style="--a:#22d3ee;--b:#1d4ed8"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Camisa esportiva</figcaption>
+            <div class="shot"><img src="imagens/Camiseta de Pesca com Peixe Tropical.png" alt="Camiseta de pesca com peixe tropical" loading="lazy" /></div>
+            <figcaption>Camiseta de Pesca com Peixe Tropical</figcaption>
           </figure>
+
           <figure class="item reveal">
-            <div class="shot" style="--a:#fbbf24;--b:#1d4ed8"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Uniforme escolar</figcaption>
+            <div class="shot"><img src="imagens/Camiseta Jovens em Ação Graffiti.png" alt="Camiseta Jovens em Ação com graffiti" loading="lazy" /></div>
+            <figcaption>Camiseta Jovens em Ação (Graffiti)</figcaption>
           </figure>
+
           <figure class="item reveal">
-            <div class="shot" style="--a:#6366f1;--b:#0a1f44"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Camiseta para evento</figcaption>
-          </figure>
-          <figure class="item reveal">
-            <div class="shot" style="--a:#38bdf8;--b:#1e3a8a"><svg><use href="#shirt"/></svg></div>
-            <figcaption>Polo com bordado</figcaption>
+            <div class="shot"><img src="imagens/Camiseta Esportiva Preta e Roxa Strikers.png" alt="Camiseta esportiva preta e roxa Strikers" loading="lazy" /></div>
+            <figcaption>Camiseta Esportiva Preta e Roxa Strikers</figcaption>
           </figure>
         </div>
 
@@ -177,9 +200,14 @@
 
   <!-- ============ RODAPÉ / CONTATO ============ -->
   <footer class="footer" id="contato">
+    <div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
     <div class="container footer__grid">
       <div>
-        <a href="#inicio" class="logo">Criarts<span>Malharia</span></a>
+        <a href="#inicio" class="logo">
+          <span class="logo__dots"><i></i><i></i><i></i></span>
+          Criarts<b>Malharia</b>
+        </a>
         <p class="footer__slogan">Criamos uma identidade para sua empresa e seus eventos com nossos uniformes.</p>
       </div>
 
@@ -213,4 +241,4 @@
 
   <script src="script.js"></script>
 </body>
-          </html>
+              </html>
