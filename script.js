@@ -29,7 +29,7 @@ nav.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", () => toggleMenu(true))
 );
 
-/* ===== CABEÇALHO MUDA AO ROLAR ===== */
+/* ===== CABEÇALHO GANHA SOMBRA AO ROLAR ===== */
 const header = document.getElementById("header");
 function onScroll() {
   header.classList.toggle("scrolled", window.scrollY > 30);
@@ -57,6 +57,15 @@ if ("IntersectionObserver" in window) {
   // Navegadores antigos: mostra tudo direto
   revealEls.forEach((el) => el.classList.add("visible"));
 }
+
+/* ===== AVISO SE UMA FOTO DA GALERIA NÃO CARREGAR ===== */
+// Ajuda a descobrir erro de nome/pasta (o GitHub Pages diferencia maiúsculas de minúsculas)
+document.querySelectorAll(".shot img").forEach((img) => {
+  const marcarFalha = () => img.parentElement.classList.add("img-fail");
+  img.addEventListener("error", marcarFalha);
+  // Caso o erro tenha acontecido antes do script carregar
+  if (img.complete && img.naturalWidth === 0) marcarFalha();
+});
 
 /* ===== ANO AUTOMÁTICO NO RODAPÉ ===== */
 document.getElementById("year").textContent = new Date().getFullYear();
