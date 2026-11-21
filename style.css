@@ -17,6 +17,10 @@
   --btn-text: #14141f;
   --footer-bg: #08080d;
 
+  /* Azul escuro do botão do menu (hambúrguer) */
+  --menu-blue: #1e3a8a;
+  --menu-blue-border: #60a5fa;
+
   /* Cores de tinta (neon / vibrantes) */
   --ink: #14141f;
   --cyan: #00b4ff;
@@ -126,17 +130,41 @@ img { max-width: 100%; display: block; }
 .logo__dots i:nth-child(2) { background: var(--magenta); left: 9px; top: 6px; }
 .logo__dots i:nth-child(3) { background: var(--yellow); left: 16px; top: 0; }
 
-.nav { display: flex; align-items: center; gap: 26px; font-weight: 600; }
+/* ----- Menu (computador: tudo em linha) ----- */
+.nav { display: flex; align-items: center; gap: 28px; font-weight: 600; }
+.nav__block { display: flex; align-items: center; gap: 22px; }
+.nav__links { display: flex; align-items: center; gap: 18px; }
+.nav__title { display: none; } /* títulos "Índice" e "Outros" só aparecem no celular */
 .nav a:not(.btn):hover { color: var(--magenta); }
 
-.menu-btn { display: none; background: none; border: 0; width: 32px; height: 26px; position: relative; cursor: pointer; }
-.menu-btn span { position: absolute; left: 0; width: 100%; height: 3px; background: var(--text); border-radius: 3px; transition: .3s; }
-.menu-btn span:nth-child(1) { top: 2px; }
-.menu-btn span:nth-child(2) { top: 11px; }
-.menu-btn span:nth-child(3) { top: 20px; }
-.menu-btn.open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+/* ----- Botão do menu (hambúrguer): fundo AZUL ESCURO sólido ----- */
+.menu-btn {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: var(--menu-blue);
+  border: 2px solid var(--menu-blue-border);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--cyan);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-btn span {
+  position: absolute;
+  left: 9px;
+  width: 22px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: .3s;
+}
+.menu-btn span:nth-child(1) { top: 11px; }
+.menu-btn span:nth-child(2) { top: 18px; }
+.menu-btn span:nth-child(3) { top: 25px; }
+.menu-btn.open span:nth-child(1) { top: 18px; transform: rotate(45deg); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+.menu-btn.open span:nth-child(3) { top: 18px; transform: rotate(-45deg); }
 
 /* ========== HERO ========== */
 .hero {
@@ -288,6 +316,41 @@ img { max-width: 100%; display: block; }
   color: #5b6070; font-weight: 600;
 }
 
+/* ========== FAQ (PERGUNTAS FREQUENTES) ========== */
+.faq__list { max-width: 820px; margin: 0 auto; display: grid; gap: 18px; }
+.faq__item {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 var(--c);
+}
+.faq__item summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 64px 18px 20px;
+  font-family: "Sora", "Inter", sans-serif;
+  font-weight: 700;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+";
+  position: absolute; right: 18px; top: 50%;
+  transform: translateY(-50%);
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--c);
+  color: var(--ink);
+  border: 2px solid var(--line);
+  font-size: 1.3rem; font-weight: 800; line-height: 1;
+}
+.faq__item[open] summary::after { content: "\2212"; }
+.faq__answer { padding: 0 20px 20px; color: var(--muted); }
+.faq__answer strong { color: var(--text); }
+.faq__answer .btn { margin-top: 14px; }
+.faq__more { color: var(--muted); margin-bottom: 16px; }
+
 /* ========== RODAPÉ ========== */
 .footer { background: var(--footer-bg); color: #cfd2de; }
 .footer .logo { color: #fff; }
@@ -297,6 +360,23 @@ img { max-width: 100%; display: block; }
 .footer a:hover { color: var(--yellow); }
 .footer__slogan { margin-top: 14px; max-width: 320px; }
 .footer__bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding: 18px 0; text-align: center; font-size: .85rem; color: #9aa0b4; }
+
+/* Redes sociais */
+.social { display: flex; gap: 12px; margin-top: 20px; }
+.social a {
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, .45);
+  color: #fff;
+  transition: transform .2s, background .2s, border-color .2s;
+}
+.social a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  border-color: transparent;
+  background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
 
 /* ========== BOTÃO FLUTUANTE WHATSAPP ========== */
 .wa-float {
@@ -320,6 +400,50 @@ img { max-width: 100%; display: block; }
 .reveal.visible { opacity: 1; transform: none; }
 
 /* ========== RESPONSIVO ========== */
+
+/* Menu hambúrguer (celulares e tablets) */
+@media (max-width: 1100px) {
+  .menu-btn { display: block; }
+
+  .nav {
+    position: absolute; top: 66px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--bg);
+    border-bottom: 2px solid var(--header-line);
+    padding: 8px 5% 20px;
+    max-height: calc(100vh - 66px);
+    overflow-y: auto;
+    transform: translateY(-120%);
+    opacity: 0; pointer-events: none;
+    transition: .35s;
+  }
+  .nav.open { transform: none; opacity: 1; pointer-events: auto; }
+
+  .nav__block { display: block; width: 100%; max-width: 640px; margin-inline: auto; padding: 16px 0; }
+  .nav__block + .nav__block { border-top: 2px dashed var(--header-line); }
+
+  .nav__title {
+    display: block;
+    font-family: "Permanent Marker", "Sora", cursive;
+    font-size: 1rem;
+    color: var(--yellow);
+    margin-bottom: 12px;
+  }
+
+  .nav__links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .nav__links a:not(.btn) {
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--header-line);
+    border-radius: 12px;
+  }
+  /* Índice com número ímpar de links: o último ocupa a linha inteira (sem buraco) */
+  .nav__block:not(.nav__block--other) .nav__links a:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+  .nav__block--other .nav__links { gap: 14px; }
+  .nav__block--other .btn { text-align: center; padding: 12px 10px; }
+}
+
 @media (max-width: 860px) {
   :root { --k: .55; }
 
@@ -328,19 +452,6 @@ img { max-width: 100%; display: block; }
   .hero p { margin-inline: auto; }
   .hero__actions, .hero__stats { justify-content: center; }
   .hero__visual { height: 360px; max-width: 420px; margin: 20px auto 0; }
-
-  .menu-btn { display: block; }
-  .nav {
-    position: absolute; top: 66px; left: 0; right: 0;
-    flex-direction: column; gap: 18px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--header-line);
-    padding: 24px 0;
-    transform: translateY(-120%);
-    opacity: 0; pointer-events: none;
-    transition: .35s;
-  }
-  .nav.open { transform: none; opacity: 1; pointer-events: auto; }
 
   /* Galeria em 2 colunas; a última ocupa a linha toda */
   .item, .item:nth-child(1), .item:nth-child(2) { grid-column: span 3; }
@@ -357,4 +468,4 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
-   }
+  }
