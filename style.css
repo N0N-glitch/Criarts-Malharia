@@ -2,22 +2,20 @@
 :root {
   color-scheme: dark;
 
-  /* Fundos e textos */
-  --bg: #101018;           /* fundo da página */
-  --bg-soft: #12121b;      /* fundo do topo (hero) */
-  --gray: #171723;         /* seções alternadas */
-  --surface: #1d1d2b;      /* cards */
-  --text: #f2f3f8;         /* texto principal */
-  --muted: #a9aec3;        /* texto secundário */
-  --line: #d9dcea;         /* bordas e sombras "de tinta" */
-  --halftone: #2a2b3c;     /* pontinhos do topo */
+  --bg: #101018;
+  --bg-soft: #12121b;
+  --gray: #171723;
+  --surface: #1d1d2b;
+  --text: #f2f3f8;
+  --muted: #a9aec3;
+  --line: #d9dcea;
+  --halftone: #2a2b3c;
   --header-bg: rgba(16, 16, 24, .88);
   --header-line: #2a2b3d;
-  --btn-bg: #f2f3f8;       /* botões principais */
+  --btn-bg: #f2f3f8;
   --btn-text: #14141f;
   --footer-bg: #08080d;
 
-  /* Cores de tinta (neon / vibrantes) */
   --ink: #14141f;
   --cyan: #00b4ff;
   --magenta: #ff2d87;
@@ -27,10 +25,9 @@
   --purple: #7c3aed;
 
   --radius: 18px;
-  --k: 1; /* escala das manchas de tinta (diminui no celular) */
+  --k: 1;
 }
 
-/* ========== RESET / BASE ========== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 body {
@@ -47,7 +44,6 @@ img { max-width: 100%; display: block; }
 .container { width: min(1140px, 92%); margin-inline: auto; position: relative; z-index: 1; }
 .center { text-align: center; margin-top: 44px; }
 
-/* ========== MANCHAS DE TINTA ========== */
 .splat {
   position: absolute;
   width: calc(var(--w) * var(--k));
@@ -65,7 +61,6 @@ img { max-width: 100%; display: block; }
   50% { transform: rotate(calc(var(--r, 0deg) + 5deg)) scale(1.05); }
 }
 
-/* ========== BARRA DE CORES (estilo gráfica) ========== */
 .colorbar { display: flex; height: 10px; }
 .colorbar i { flex: 1; }
 .colorbar i:nth-child(1) { background: var(--cyan); }
@@ -73,7 +68,6 @@ img { max-width: 100%; display: block; }
 .colorbar i:nth-child(3) { background: var(--yellow); }
 .colorbar i:nth-child(4) { background: var(--text); }
 
-/* ========== BOTÕES / TAGS ========== */
 .btn {
   display: inline-block;
   background: var(--btn-bg);
@@ -105,7 +99,6 @@ img { max-width: 100%; display: block; }
 }
 .tag--alt { background: var(--cyan); color: #fff; }
 
-/* ========== CABEÇALHO ========== */
 .header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -126,14 +119,12 @@ img { max-width: 100%; display: block; }
 .logo__dots i:nth-child(2) { background: var(--magenta); left: 9px; top: 6px; }
 .logo__dots i:nth-child(3) { background: var(--yellow); left: 16px; top: 0; }
 
-/* ----- Menu (computador: tudo em linha) ----- */
 .nav { display: flex; align-items: center; gap: 28px; font-weight: 600; }
 .nav__block { display: flex; align-items: center; gap: 22px; }
 .nav__links { display: flex; align-items: center; gap: 18px; }
-.nav__title { display: none; } /* títulos "Índice" e "Outros" só aparecem no celular */
+.nav__title { display: none; }
 .nav a:not(.btn):hover { color: var(--magenta); }
 
-/* ----- Botão do menu (hambúrguer): sem fundo/quadrado, linhas coloridas ----- */
 .menu-btn {
   display: none;
   position: relative;
@@ -152,17 +143,14 @@ img { max-width: 100%; display: block; }
   border-radius: 3px;
   transition: .3s;
 }
-/* Cada linha com uma cor diferente inspirada na marca */
 .menu-btn span:nth-child(1) { top: 12px; background: var(--magenta); }
 .menu-btn span:nth-child(2) { top: 20px; background: var(--yellow); }
 .menu-btn span:nth-child(3) { top: 28px; background: var(--cyan); }
 
-/* Quando aberto, o ícone vira um X limpo */
 .menu-btn.open span:nth-child(1) { top: 20px; transform: rotate(45deg); background: var(--text); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
 .menu-btn.open span:nth-child(3) { top: 20px; transform: rotate(-45deg); background: var(--text); }
 
-/* ========== HERO ========== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -172,7 +160,6 @@ img { max-width: 100%; display: block; }
   background: var(--bg-soft);
   overflow: hidden;
 }
-/* pontos de retícula (halftone) com esmaecimento */
 .hero::before {
   content: "";
   position: absolute; inset: 0;
@@ -189,7 +176,6 @@ img { max-width: 100%; display: block; }
 .hero__stats { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 42px; color: var(--muted); font-size: .9rem; }
 .hero__stats strong { display: block; font-family: "Sora", sans-serif; font-size: 1.5rem; color: var(--text); }
 
-/* Fotos do hero (estilo foto revelada) */
 .hero__visual { position: relative; height: 460px; }
 .polaroid {
   position: absolute;
@@ -216,14 +202,12 @@ img { max-width: 100%; display: block; }
   box-shadow: 4px 4px 0 var(--line);
 }
 
-/* ========== SEÇÕES ========== */
 .section { position: relative; padding: 90px 0; overflow: hidden; }
 .section--gray { background: var(--gray); }
 .section__head { text-align: center; max-width: 620px; margin: 0 auto 50px; }
 .section__head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 10px; }
 .section__head p { color: var(--muted); }
 
-/* Cards de serviços */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
 .card {
   background: var(--surface);
@@ -254,7 +238,6 @@ img { max-width: 100%; display: block; }
   transform: rotate(-1.5deg);
 }
 
-/* Diferenciais */
 .diff { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .diff h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin-bottom: 14px; }
 .diff__text p { color: var(--muted); margin-bottom: 26px; }
@@ -271,7 +254,6 @@ img { max-width: 100%; display: block; }
 .diff__list h3 { font-size: 1rem; margin-bottom: 4px; }
 .diff__list p { color: var(--muted); font-size: .9rem; }
 
-/* Galeria: 2 itens grandes em cima e 3 embaixo */
 .gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 28px; }
 .item {
   grid-column: span 2;
@@ -290,7 +272,6 @@ img { max-width: 100%; display: block; }
 .item:nth-child(5) { --c: var(--green); }
 .item:hover { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--c); }
 
-/* O fundo da foto é claro para as peças escuras (ex.: camiseta preta e roxa) aparecerem bem */
 .shot {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -303,7 +284,6 @@ img { max-width: 100%; display: block; }
 .item:hover .shot img { transform: scale(1.06); }
 .item figcaption { padding: 14px 18px; font-weight: 700; }
 
-/* Se uma foto não carregar, mostra um aviso em vez do ícone quebrado */
 .shot.img-fail img { display: none; }
 .shot.img-fail::after {
   content: "Foto indisponível";
@@ -312,7 +292,6 @@ img { max-width: 100%; display: block; }
   color: #5b6070; font-weight: 600;
 }
 
-/* ========== FAQ (PERGUNTAS FREQUENTES) ========== */
 .faq__list { max-width: 820px; margin: 0 auto; display: grid; gap: 18px; }
 .faq__item {
   background: var(--surface);
@@ -347,7 +326,6 @@ img { max-width: 100%; display: block; }
 .faq__answer .btn { margin-top: 14px; }
 .faq__more { color: var(--muted); margin-bottom: 16px; }
 
-/* ========== RODAPÉ ========== */
 .footer { background: var(--footer-bg); color: #cfd2de; }
 .footer .logo { color: #fff; }
 .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
@@ -357,7 +335,6 @@ img { max-width: 100%; display: block; }
 .footer__slogan { margin-top: 14px; max-width: 320px; }
 .footer__bottom { border-top: 1px solid rgba(255, 255, 255, .12); padding: 18px 0; text-align: center; font-size: .85rem; color: #9aa0b4; }
 
-/* Redes sociais */
 .social { display: flex; gap: 12px; margin-top: 20px; }
 .social a {
   width: 46px; height: 46px;
@@ -374,7 +351,6 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
 }
 
-/* ========== BOTÃO FLUTUANTE WHATSAPP ========== */
 .wa-float {
   position: fixed; right: 20px; bottom: 20px; z-index: 60;
   width: 60px; height: 60px; border-radius: 50%;
@@ -391,11 +367,6 @@ img { max-width: 100%; display: block; }
   100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* ========== ANIMAÇÃO DE ENTRADA (com segurança contra conteúdo invisível) ========== */
-
-/* Sem JavaScript (ou antes dele rodar) o conteúdo fica SEMPRE VISÍVEL.
-   Só escondemos os elementos para animar quando a <html> tem a classe "js"
-   (adicionada por uma linha no <head> do index.html). */
 .js .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -404,14 +375,9 @@ img { max-width: 100%; display: block; }
 }
 .js .reveal.visible { opacity: 1; transform: none; }
 
-/* PLANO B em CSS puro: se o script.js NÃO confirmar que iniciou (classe "js-ready"),
-   tudo aparece sozinho depois de 2,5 segundos. */
 .js:not(.js-ready) .reveal:not(.visible) { animation: revealSafety .6s ease 2.5s forwards; }
 @keyframes revealSafety { to { opacity: 1; transform: none; } }
 
-/* ========== RESPONSIVO ========== */
-
-/* Menu hambúrguer (celulares e tablets) */
 @media (max-width: 1100px) {
   .menu-btn { display: block; }
 
@@ -447,11 +413,10 @@ img { max-width: 100%; display: block; }
     border: 1px solid var(--header-line);
     border-radius: 12px;
   }
-  /* Índice com número par de links (agora 6 links): divide certinho em 2 colunas */
-  .nav__block:not(.nav__block--other) .nav__links a:last-child:nth-child(odd) { grid-column: auto; }
 
-  .nav__block--other .nav__links { gap: 14px; }
-  .nav__block--other .btn { text-align: center; padding: 12px 10px; }
+  /* Ajuste na seção "Outros" para o botão de orçamento ocupar a largura inteira (igual ao espaço vermelho desenhado) */
+  .nav__block--other .nav__links { display: flex; flex-direction: column; }
+  .nav__block--other .btn { text-align: center; width: 100%; display: block; padding: 12px 14px; }
 }
 
 @media (max-width: 860px) {
@@ -463,7 +428,6 @@ img { max-width: 100%; display: block; }
   .hero__actions, .hero__stats { justify-content: center; }
   .hero__visual { height: 360px; max-width: 420px; margin: 20px auto 0; }
 
-  /* Galeria em 2 colunas; a última ocupa a linha toda */
   .item, .item:nth-child(1), .item:nth-child(2) { grid-column: span 3; }
   .item:last-child { grid-column: span 6; }
 }
@@ -474,7 +438,6 @@ img { max-width: 100%; display: block; }
   .hero__visual { height: 320px; }
 }
 
-/* Respeita quem prefere menos animação: tudo aparece direto */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
