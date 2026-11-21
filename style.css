@@ -18,9 +18,9 @@
 
   --ink: #14141f;
   --cyan: #00b4ff;
-  --magenta: #ff2d87;
+  --magenta: #ff2d87; /* Mantido no logo e rosa original se necessário, mas substituído nos destaques principais por laranja */
   --yellow: #ffd400;
-  --orange: #ff7a1a;
+  --orange: #ff7a1a;  /* Laranja vibrante principal da nova identidade */
   --green: #22c55e;
   --purple: #7c3aed;
 
@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
 .colorbar { display: flex; height: 10px; }
 .colorbar i { flex: 1; }
 .colorbar i:nth-child(1) { background: var(--cyan); }
-.colorbar i:nth-child(2) { background: var(--magenta); }
+.colorbar i:nth-child(2) { background: var(--orange); } /* Substituído o vermelho por laranja na barra de cores */
 .colorbar i:nth-child(3) { background: var(--yellow); }
 .colorbar i:nth-child(4) { background: var(--text); }
 
@@ -76,12 +76,13 @@ img { max-width: 100%; display: block; }
   padding: 12px 24px;
   border-radius: 999px;
   border: 2px solid var(--btn-bg);
-  box-shadow: 4px 4px 0 var(--magenta);
+  /* Sombra dos botões principais alterada de vermelho para laranja */
+  box-shadow: 4px 4px 0 var(--orange);
   transition: transform .2s, box-shadow .2s;
 }
 .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--cyan); }
-.btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--magenta); }
-.btn--small { padding: 8px 18px; font-size: .9rem; box-shadow: 3px 3px 0 var(--magenta); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--orange); }
+.btn--small { padding: 8px 18px; font-size: .9rem; box-shadow: 3px 3px 0 var(--orange); }
 .btn--big { padding: 16px 32px; font-size: 1.05rem; }
 .btn--ghost { background: var(--surface); color: var(--text); border-color: var(--line); box-shadow: 4px 4px 0 var(--yellow); }
 .btn--ghost:hover { box-shadow: 7px 7px 0 var(--orange); }
@@ -112,19 +113,20 @@ img { max-width: 100%; display: block; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 
 .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 800; color: var(--text); }
-.logo b { color: var(--magenta); font-weight: 600; margin-left: -4px; }
+.logo b { color: var(--orange); font-weight: 600; margin-left: -4px; } /* O "Malharia" no logo agora está em laranja */
 .logo__dots { position: relative; width: 34px; height: 24px; display: inline-block; }
 .logo__dots i { position: absolute; width: 18px; height: 18px; border-radius: 50%; mix-blend-mode: screen; }
 .logo__dots i:nth-child(1) { background: var(--cyan); left: 0; top: 0; }
-.logo__dots i:nth-child(2) { background: var(--magenta); left: 9px; top: 6px; }
+.logo__dots i:nth-child(2) { background: var(--orange); left: 9px; top: 6px; } /* Ponto do logo trocado para laranja */
 .logo__dots i:nth-child(3) { background: var(--yellow); left: 16px; top: 0; }
 
 .nav { display: flex; align-items: center; gap: 28px; font-weight: 600; }
 .nav__block { display: flex; align-items: center; gap: 22px; }
 .nav__links { display: flex; align-items: center; gap: 18px; }
 .nav__title { display: none; }
-.nav a:not(.btn):hover { color: var(--magenta); }
+.nav a:not(.btn):hover { color: var(--orange); } /* Hover do menu em laranja */
 
+/* Menu hamburguer com "X" em BRANCO puro ao abrir */
 .menu-btn {
   display: none;
   position: relative;
@@ -143,13 +145,13 @@ img { max-width: 100%; display: block; }
   border-radius: 3px;
   transition: .3s;
 }
-.menu-btn span:nth-child(1) { top: 12px; background: var(--magenta); }
+.menu-btn span:nth-child(1) { top: 12px; background: var(--orange); }
 .menu-btn span:nth-child(2) { top: 20px; background: var(--yellow); }
 .menu-btn span:nth-child(3) { top: 28px; background: var(--cyan); }
 
-.menu-btn.open span:nth-child(1) { top: 20px; transform: rotate(45deg); background: var(--text); }
+.menu-btn.open span:nth-child(1) { top: 20px; transform: rotate(45deg); background: #ffffff; }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { top: 20px; transform: rotate(-45deg); background: var(--text); }
+.menu-btn.open span:nth-child(3) { top: 20px; transform: rotate(-45deg); background: #ffffff; }
 
 .hero {
   position: relative;
@@ -186,7 +188,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 8px 8px 0 var(--c, var(--cyan));
 }
 .polaroid img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #f4f4f8; }
-.p1 { --c: var(--magenta); width: 62%; top: 0; left: 0; transform: rotate(-6deg); animation: floaty 6s ease-in-out infinite; }
+.p1 { --c: var(--orange); width: 62%; top: 0; left: 0; transform: rotate(-6deg); animation: floaty 6s ease-in-out infinite; }
 .p2 { --c: var(--cyan); width: 58%; bottom: 0; right: 0; transform: rotate(5deg); animation: floaty 7s ease-in-out infinite reverse; }
 @keyframes floaty { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
 .sticker {
@@ -265,7 +267,7 @@ img { max-width: 100%; display: block; }
   transition: transform .25s, box-shadow .25s;
 }
 .item:nth-child(1), .item:nth-child(2) { grid-column: span 3; }
-.item:nth-child(1) { --c: var(--magenta); }
+.item:nth-child(1) { --c: var(--orange); } /* Galeria item 1 ajustado para laranja */
 .item:nth-child(2) { --c: var(--cyan); }
 .item:nth-child(3) { --c: var(--yellow); }
 .item:nth-child(4) { --c: var(--purple); }
@@ -328,6 +330,7 @@ img { max-width: 100%; display: block; }
 
 .footer { background: var(--footer-bg); color: #cfd2de; }
 .footer .logo { color: #fff; }
+.footer .logo b { color: var(--orange); }
 .footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding: 56px 0 40px; }
 .footer h4 { color: #fff; margin-bottom: 14px; }
 .footer p { margin-bottom: 10px; font-size: .95rem; }
@@ -348,7 +351,7 @@ img { max-width: 100%; display: block; }
   color: #fff;
   transform: translateY(-3px);
   border-color: transparent;
-  background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+  background: linear-gradient(45deg, #f9ce34, #ff7a1a, #6228d7);
 }
 
 .wa-float {
