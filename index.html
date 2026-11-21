@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261121e" />
+  <link rel="stylesheet" href="style.css?v=20261121f" />
 
   <style>
     .btn--wa { background: #25d366; color: var(--ink); border-color: var(--line); box-shadow: 3px 3px 0 var(--line); }
@@ -96,7 +96,7 @@
         <div class="nav__block nav__block--other">
           <span class="nav__title">Outros</span>
           <div class="nav__links">
-            <a href="#" class="btn btn--small js-whatsapp-clean">💬 Orçamento</a>
+            <a href="#" class="btn btn--small js-whatsapp">💬 Orçamento</a>
           </div>
         </div>
       </nav>
@@ -360,18 +360,18 @@
         </a>
         <p class="footer__slogan">Criamos uma identidade para sua empresa e seus eventos com nossos uniformes.</p>
 
-        <!-- Redes sociais e links rápidos (Instagram, WhatsApp limpo e Maps) -->
+        <!-- Ordem corrigida: 1. WhatsApp (sem mensagem), 2. Instagram, 3. Maps -->
         <div class="social">
+          <a href="https://wa.me/5569992262400" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Criarts Malharia" title="WhatsApp">
+            <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true">
+              <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.7 1.5 5.6 1.5 7 0 12.6-5.6 12.6-12.5S23 3 16 3zm0 22.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.4 1.2 1.2-4.3-.3-.4a10 10 0 0 1-1.5-5.2C5.6 9.9 10.3 5.4 16 5.4s10.4 4.5 10.4 10.1S21.7 25.8 16 25.8zm5.7-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7 3.2 1.3 3.2.9 3.8.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/>
+            </svg>
+          </a>
           <a href="https://www.instagram.com/criartsmalharia" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Criarts Malharia" title="Instagram">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5"></rect>
               <circle cx="12" cy="12" r="4"></circle>
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
-            </svg>
-          </a>
-          <a href="#" class="js-whatsapp-clean" aria-label="WhatsApp da Criarts Malharia" title="WhatsApp">
-            <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true">
-              <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.7 1.5 5.6 1.5 7 0 12.6-5.6 12.6-12.5S23 3 16 3zm0 22.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.4 1.2 1.2-4.3-.3-.4a10 10 0 0 1-1.5-5.2C5.6 9.9 10.3 5.4 16 5.4s10.4 4.5 10.4 10.1S21.7 25.8 16 25.8zm5.7-7.5c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7 3.2 1.3 3.2.9 3.8.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/>
             </svg>
           </a>
           <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Dom%20Pedro%20I%2C%202924%20-%20Setor%205%2C%20Jaru%20-%20RO" target="_blank" rel="noopener noreferrer" aria-label="Localização no Google Maps" title="Google Maps">
@@ -387,7 +387,7 @@
         <h4>Contato</h4>
         <p class="footer__addr">📍 <strong>Av. Dom Pedro I, 2924 - Setor 5</strong><br />Jaru - RO</p>
         <p>📞 <a href="tel:+5569992262400">(69) 99226-2400</a></p>
-        <p>💬 <a href="#" class="js-whatsapp-clean">Chamar no WhatsApp</a></p>
+        <p>💬 <a href="https://wa.me/5569992262400" target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a></p>
         <p>📷 <a href="https://www.instagram.com/criartsmalharia" target="_blank" rel="noopener noreferrer">@criartsmalharia no Instagram</a></p>
       </div>
 
@@ -404,12 +404,13 @@
     </div>
   </footer>
 
-  <a href="#" class="wa-float js-whatsapp" aria-label="Falar no WhatsApp">
+  <!-- Botão flutuante verde do WhatsApp (sem mensagem pré-escrita) -->
+  <a href="https://wa.me/5569992262400" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
       <path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.7 1.500 5.600 1.500 7 0 12.600-5.600 12.600-12.500S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10 10 0 0 1-1.500-5.200C5.600 9.900 10.300 5.400 16 5.400s10.400 4.500 10.400 10.100S21.700 25.800 16 25.800zm5.700-7.500c-.3-.2-1.800-.9-2.100-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.300-.5-2.500-1.500-.9-.8-1.500-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.2-.3.300-.5.100-.2 0-.4 0-.5l-1-2.200c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1.100 1-1.100 2.600s1.100 3 1.300 3.200c.2.200 2.200 3.400 5.400 4.700 3.200 1.300 3.200.9 3.800.8.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400-.1-.2-.3-.3-.6-.4z"/>
     </svg>
   </a>
 
-  <script src="script.js?v=20261121e"></script>
+  <script src="script.js?v=20261121f"></script>
 </body>
 </html>
