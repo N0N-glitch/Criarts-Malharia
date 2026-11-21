@@ -4,6 +4,7 @@ const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
 
 // Aplica o link do WhatsApp em todos os botões com a classe .js-whatsapp
+// (os botões de cada serviço/produto já têm a própria mensagem direto no HTML)
 const whatsappUrl =
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -13,7 +14,7 @@ document.querySelectorAll(".js-whatsapp").forEach((el) => {
   el.rel = "noopener noreferrer";
 });
 
-/* ===== MENU MOBILE ===== */
+/* ===== MENU MOBILE (Índice + Outros) ===== */
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
 
@@ -25,9 +26,23 @@ function toggleMenu(forceClose = false) {
 }
 
 menuBtn.addEventListener("click", () => toggleMenu());
+
+// Fecha o menu ao tocar em qualquer link ou botão do menu (Índice, Orçamento, FAQ)
 nav.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", () => toggleMenu(true))
 );
+
+// Fecha o menu com a tecla ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") toggleMenu(true);
+});
+
+// Fecha o menu ao tocar fora dele
+document.addEventListener("click", (e) => {
+  if (!nav.classList.contains("open")) return;
+  if (nav.contains(e.target) || menuBtn.contains(e.target)) return;
+  toggleMenu(true);
+});
 
 /* ===== CABEÇALHO GANHA SOMBRA AO ROLAR ===== */
 const header = document.getElementById("header");
