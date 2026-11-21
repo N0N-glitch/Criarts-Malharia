@@ -73,7 +73,6 @@ try {
   mostrarTudo();
 }
 
-/* WhatsApp com mensagem padrão (botões de solicitação de orçamento) */
 seguro("whatsapp", () => {
   const WHATSAPP_NUMBER = "5569992262400";
   const WHATSAPP_MESSAGE = "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
