@@ -447,8 +447,8 @@ img { max-width: 100%; display: block; }
     border: 1px solid var(--header-line);
     border-radius: 12px;
   }
-  /* Índice com número ímpar de links: o último ocupa a linha inteira (sem buraco) */
-  .nav__block:not(.nav__block--other) .nav__links a:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* Índice com número par de links (agora 6 links): divide certinho em 2 colunas */
+  .nav__block:not(.nav__block--other) .nav__links a:last-child:nth-child(odd) { grid-column: auto; }
 
   .nav__block--other .nav__links { gap: 14px; }
   .nav__block--other .btn { text-align: center; padding: 12px 10px; }
