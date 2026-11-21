@@ -73,7 +73,7 @@ try {
   mostrarTudo();
 }
 
-/* WhatsApp com mensagem padrão (botões principais de orçamento) */
+/* WhatsApp com mensagem padrão (botões de solicitação de orçamento) */
 seguro("whatsapp", () => {
   const WHATSAPP_NUMBER = "5569992262400";
   const WHATSAPP_MESSAGE = "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
@@ -81,18 +81,6 @@ seguro("whatsapp", () => {
 
   document.querySelectorAll(".js-whatsapp").forEach((el) => {
     el.href = whatsappUrl;
-    el.target = "_blank";
-    el.rel = "noopener noreferrer";
-  });
-});
-
-/* WhatsApp limpo (sem mensagem pré-programada, usado no rodapé e no menu) */
-seguro("whatsapp-clean", () => {
-  const WHATSAPP_NUMBER = "5569992262400";
-  const whatsappCleanUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
-
-  document.querySelectorAll(".js-whatsapp-clean").forEach((el) => {
-    el.href = whatsappCleanUrl;
     el.target = "_blank";
     el.rel = "noopener noreferrer";
   });
