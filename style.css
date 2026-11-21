@@ -17,10 +17,6 @@
   --btn-text: #14141f;
   --footer-bg: #08080d;
 
-  /* Azul escuro do botão do menu (hambúrguer) */
-  --menu-blue: #1e3a8a;
-  --menu-blue-border: #60a5fa;
-
   /* Cores de tinta (neon / vibrantes) */
   --ink: #14141f;
   --cyan: #00b4ff;
@@ -137,34 +133,34 @@ img { max-width: 100%; display: block; }
 .nav__title { display: none; } /* títulos "Índice" e "Outros" só aparecem no celular */
 .nav a:not(.btn):hover { color: var(--magenta); }
 
-/* ----- Botão do menu (hambúrguer): fundo AZUL ESCURO sólido ----- */
+/* ----- Botão do menu (hambúrguer): sem fundo/quadrado, linhas coloridas ----- */
 .menu-btn {
   display: none;
   position: relative;
   width: 44px;
   height: 44px;
-  background: var(--menu-blue);
-  border: 2px solid var(--menu-blue-border);
-  border-radius: 12px;
-  box-shadow: 3px 3px 0 var(--cyan);
+  background: transparent;
+  border: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 .menu-btn span {
   position: absolute;
-  left: 9px;
-  width: 22px;
+  left: 8px;
+  width: 28px;
   height: 3px;
-  background: #fff;
   border-radius: 3px;
   transition: .3s;
 }
-.menu-btn span:nth-child(1) { top: 11px; }
-.menu-btn span:nth-child(2) { top: 18px; }
-.menu-btn span:nth-child(3) { top: 25px; }
-.menu-btn.open span:nth-child(1) { top: 18px; transform: rotate(45deg); }
+/* Cada linha com uma cor diferente inspirada na marca */
+.menu-btn span:nth-child(1) { top: 12px; background: var(--magenta); }
+.menu-btn span:nth-child(2) { top: 20px; background: var(--yellow); }
+.menu-btn span:nth-child(3) { top: 28px; background: var(--cyan); }
+
+/* Quando aberto, o ícone vira um X limpo */
+.menu-btn.open span:nth-child(1) { top: 20px; transform: rotate(45deg); background: var(--text); }
 .menu-btn.open span:nth-child(2) { opacity: 0; }
-.menu-btn.open span:nth-child(3) { top: 18px; transform: rotate(-45deg); }
+.menu-btn.open span:nth-child(3) { top: 20px; transform: rotate(-45deg); background: var(--text); }
 
 /* ========== HERO ========== */
 .hero {
@@ -482,4 +478,4 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
-  }
+}
