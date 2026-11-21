@@ -1,6 +1,3 @@
-/* =====================================================================
-   1) ANIMAÇÃO DE ENTRADA (roda PRIMEIRO, para nunca deixar conteúdo invisível)
-   ===================================================================== */
 const raiz = document.documentElement;
 
 function seguro(nome, funcao) {
@@ -76,16 +73,11 @@ try {
   mostrarTudo();
 }
 
-/* =====================================================================
-   2) CONFIGURAÇÃO DO WHATSAPP
-   ===================================================================== */
+/* WhatsApp com mensagem padrão (botões principais de orçamento) */
 seguro("whatsapp", () => {
   const WHATSAPP_NUMBER = "5569992262400";
-  const WHATSAPP_MESSAGE =
-    "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
-
-  const whatsappUrl =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const WHATSAPP_MESSAGE = "Olá! Vim pelo site da Criarts Malharia e gostaria de solicitar um orçamento.";
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   document.querySelectorAll(".js-whatsapp").forEach((el) => {
     el.href = whatsappUrl;
@@ -94,9 +86,18 @@ seguro("whatsapp", () => {
   });
 });
 
-/* =====================================================================
-   3) MENU MOBILE
-   ===================================================================== */
+/* WhatsApp limpo (sem mensagem pré-programada, usado no rodapé e no menu) */
+seguro("whatsapp-clean", () => {
+  const WHATSAPP_NUMBER = "5569992262400";
+  const whatsappCleanUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+  document.querySelectorAll(".js-whatsapp-clean").forEach((el) => {
+    el.href = whatsappCleanUrl;
+    el.target = "_blank";
+    el.rel = "noopener noreferrer";
+  });
+});
+
 seguro("menu", () => {
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.getElementById("nav");
@@ -126,9 +127,6 @@ seguro("menu", () => {
   });
 });
 
-/* =====================================================================
-   4) CABEÇALHO GANHA SOMBRA AO ROLAR
-   ===================================================================== */
 seguro("cabecalho", () => {
   const cabecalho = document.getElementById("header");
   if (!cabecalho) return;
@@ -140,9 +138,6 @@ seguro("cabecalho", () => {
   aoRolar();
 });
 
-/* =====================================================================
-   5) AVISO SE UMA FOTO DA GALERIA NÃO CARREGAR
-   ===================================================================== */
 seguro("fotos", () => {
   document.querySelectorAll(".shot img").forEach((img) => {
     const marcarFalha = () => img.parentElement.classList.add("img-fail");
@@ -151,9 +146,6 @@ seguro("fotos", () => {
   });
 });
 
-/* =====================================================================
-   6) ANO AUTOMÁTICO NO RODAPÉ
-   ===================================================================== */
 seguro("ano", () => {
   const ano = document.getElementById("year");
   if (ano) ano.textContent = new Date().getFullYear();
