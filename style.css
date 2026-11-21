@@ -414,7 +414,6 @@ img { max-width: 100%; display: block; }
     border-radius: 12px;
   }
 
-  /* Ajuste na seção "Outros" para o botão de orçamento ocupar a largura inteira (igual ao espaço vermelho desenhado) */
   .nav__block--other .nav__links { display: flex; flex-direction: column; }
   .nav__block--other .btn { text-align: center; width: 100%; display: block; padding: 12px 14px; }
 }
